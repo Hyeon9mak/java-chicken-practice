@@ -17,12 +17,26 @@ public class PaymentService {
     private static Table table;
 
     public static void payment() {
-        PaymentService.table = TableService.selectTable();
+        if(TableService.isAnyPaymentTable()) {
+            PaymentDisplay.printError("결제를 진행할 테이블이 없습니다.");
+            return;
+        }
+        selectTableWithValidate();
         PaymentDisplay.printOrdersOfTable(table);
         PaymentDisplay.printPaymentOfTable(table);
         PaymentMenu payment = selectPayment();
         payment.execute();
         table.clear();
+    }
+
+    private static void selectTableWithValidate() {
+        while (true) {
+            PaymentService.table = TableService.selectTable();
+            if(!PaymentService.table.isOrdersEmpty()){
+                break;
+            }
+            PaymentDisplay.printError("해당 테이블에 등록된 주문이 없습니다.");
+        }
     }
 
     private static PaymentMenu selectPayment() {
@@ -47,7 +61,7 @@ public class PaymentService {
         List<Order> orders = PaymentService.table.getOrders();
         int checkPrice = calculateChickenPrice(orders);
         int beveragePrice = calculateBeveragePrice(orders);
-        int totalPrice = (int)((checkPrice + beveragePrice) * DISCOUNT_CASH);
+        int totalPrice = (int) ((checkPrice + beveragePrice) * DISCOUNT_CASH);
         PaymentDisplay.printTotalPrice(totalPrice);
     }
 

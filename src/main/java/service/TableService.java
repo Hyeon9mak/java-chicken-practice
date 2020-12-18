@@ -8,6 +8,10 @@ import view.OutputView;
 
 public class TableService {
 
+    public static boolean isAnyPaymentTable() {
+        return TableRepository.tables().stream().allMatch(Table::isOrdersEmpty);
+    }
+
     public static Table selectTable() {
         while (true) {
             try {
