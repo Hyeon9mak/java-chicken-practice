@@ -3,14 +3,14 @@ package domain;
 public class Order {
 
     private final Menu menu;
-    private final int count;
+    private final MenuCount menuCount;
 
-    private Order(Menu menu, int count) {
+    private Order(Menu menu, MenuCount menuCount) {
         this.menu = menu;
-        this.count = count;
+        this.menuCount = menuCount;
     }
 
-    public static Order newOrder(Menu menu, int count) {
-        return new Order(menu, count);
+    public static Order newOrder(Menu menu, MenuCount menuCount) {
+        return new Order(menu, menuCount);
     }
 }

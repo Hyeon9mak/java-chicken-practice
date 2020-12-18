@@ -4,20 +4,30 @@ import java.util.Scanner;
 
 public class InputView extends Display {
 
+    private static final String REQUEST_INPUT_SELECT_MENU = "원하는 기능을 선택하세요.";
+    private static final String REQUEST_INPUT_TABLE_NUMBER = "주문할 테이블을 선택하세요.";
+    private static final String REQUEST_INPUT_MENU_NUMBER = "등록할 메뉴를 선택하세요.";
+    private static final String REQUEST_INPUT_MENU_COUNT = "메뉴의 수량을 입력하세요.";
+
     private static final Scanner scanner = new Scanner(System.in);
 
+    public static String inputSelectMenu() {
+        printNotice(REQUEST_INPUT_SELECT_MENU);
+        return scanner.nextLine();
+    }
+
     public static String inputTableNumber() {
-        printNotice("주문할 테이블을 선택하세요.");
+        printNotice(REQUEST_INPUT_TABLE_NUMBER);
         return scanner.nextLine();
     }
 
     public static String inputMenuNumber() {
-        printNotice("등록할 메뉴를 선택하세요.");
+        printNotice(REQUEST_INPUT_MENU_NUMBER);
         return scanner.nextLine();
     }
 
-    public static String inputSelectMenu() {
-        printNotice("원하는 기능을 선택하세요.");
+    public static String inputMenuCount() {
+        printNotice(REQUEST_INPUT_MENU_COUNT);
         return scanner.nextLine();
     }
 }
