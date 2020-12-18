@@ -14,6 +14,10 @@ public class Order {
         return new Order(menu, menuCount);
     }
 
+    public boolean isChicken(){
+        return menu.isChicken();
+    }
+
     public String getMenu() {
         return menu.getName();
     }

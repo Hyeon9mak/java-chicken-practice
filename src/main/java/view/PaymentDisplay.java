@@ -3,6 +3,7 @@ package view;
 import domain.Table;
 
 public class PaymentDisplay extends Display {
+
     public static void printOrdersOfTable(Table table) {
         printNotice("주문 내역");
         System.out.println("메뉴\t수량\t금액");
