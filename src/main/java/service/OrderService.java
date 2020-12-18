@@ -7,6 +7,6 @@ public class OrderService {
 
     public static void order() {
         Table table = TableService.selectTableByOrder();
-        //Menu menu = MenuService.selectMenuByOrder();
+        Menu menu = MenuService.selectMenuByOrder();
     }
 }

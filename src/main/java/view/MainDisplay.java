@@ -25,7 +25,7 @@ public class MainDisplay extends Display {
     private static MainMenu selectMenu() {
         while (true) {
             try {
-                return MainMenu.getMenuByInput(InputView.getSelectMenu());
+                return MainMenu.getMenuByInput(InputView.inputSelectMenu());
             } catch (NoSuchElementException e) {
                 printSelectError();
             }

@@ -12,17 +12,16 @@ public class TableService {
         while (true) {
             try {
                 OutputView.printTables(TableRepository.tables());
-                final int number = getTablWithValidate();
-                return findTableByNumber(number);
+                return findTableByNumber(getNumberByInput());
             } catch (IllegalArgumentException e) {
                 OutputView.printError(e.getMessage());
             }
         }
     }
 
-    private static int getTablWithValidate() {
+    private static int getNumberByInput() {
         try {
-            return Integer.parseInt(InputView.getSelectMenu());
+            return Integer.parseInt(InputView.inputTableNumber());
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("화면에 보이는 테이블 번호를 선택해 주세요.");
         }

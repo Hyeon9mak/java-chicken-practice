@@ -1,6 +1,7 @@
 package domain;
 
 public class Menu {
+
     private final int number;
     private final String name;
     private final Category category;
@@ -11,6 +12,10 @@ public class Menu {
         this.name = name;
         this.category = category;
         this.price = price;
+    }
+
+    public boolean isEqualMenuNumber(final int number) {
+        return this.number == number;
     }
 
     @Override
