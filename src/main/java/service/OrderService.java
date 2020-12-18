@@ -9,7 +9,7 @@ import domain.Table;
 public class OrderService {
 
     public static void order() {
-        Table table = TableService.selectTableByOrder();
+        Table table = TableService.selectTable();
         Menu menu = MenuService.selectMenuByOrder();
         MenuCount menuCount = MenuService.selectCountByOrder();
         Order order = Order.newOrder(menu, menuCount);

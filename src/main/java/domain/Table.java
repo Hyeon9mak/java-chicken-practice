@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Table {
@@ -22,6 +23,10 @@ public class Table {
 
     public boolean isOrdersEmpty() {
         return orders.isEmpty();
+    }
+
+    public List<Order> getOrders() {
+        return Collections.unmodifiableList(orders);
     }
 
     @Override

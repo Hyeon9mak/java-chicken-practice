@@ -13,4 +13,16 @@ public class Order {
     public static Order newOrder(Menu menu, MenuCount menuCount) {
         return new Order(menu, menuCount);
     }
+
+    public String getMenu() {
+        return menu.getName();
+    }
+
+    public int getMenuCount() {
+        return menuCount.getCount();
+    }
+
+    public int getPrice() {
+        return menu.getPrice() * menuCount.getCount();
+    }
 }

@@ -8,7 +8,7 @@ import view.OutputView;
 
 public class TableService {
 
-    public static Table selectTableByOrder() {
+    public static Table selectTable() {
         while (true) {
             try {
                 OutputView.printTables(TableRepository.tables());

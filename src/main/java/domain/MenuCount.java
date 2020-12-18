@@ -22,4 +22,7 @@ public class MenuCount {
         }
     }
 
+    public int getCount() {
+        return count;
+    }
 }
