@@ -22,6 +22,7 @@ public class PaymentService {
         PaymentDisplay.printPaymentOfTable(table);
         PaymentMenu payment = selectPayment();
         payment.execute();
+        table.clear();
     }
 
     private static PaymentMenu selectPayment() {
