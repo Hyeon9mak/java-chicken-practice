@@ -9,7 +9,11 @@ public class Display {
         System.out.println(NOTICE_PREFIX + message);
     }
 
-    public static void printSelectError(){
+    public static void printSelectError() {
         System.out.println(ERROR_PREFIX + "존재하지 않는 기능입니다.");
+    }
+
+    public static void printError(String message) {
+        System.out.println(ERROR_PREFIX + message);
     }
 }
